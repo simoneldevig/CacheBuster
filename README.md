@@ -1,4 +1,4 @@
-[![Build status](https://dev.azure.com/simonnorlundeldevig/CacheBuster/_apis/build/status/CacheBuster-ASP.NET-CI)](https://dev.azure.com/simonnorlundeldevig/CacheBuster/_build/latest?definitionId=1)
+![Nuget](https://img.shields.io/nuget/v/CacheBuster) [![Build status](https://dev.azure.com/simonnorlundeldevig/CacheBuster/_apis/build/status/CacheBuster-ASP.NET-CI)](https://dev.azure.com/simonnorlundeldevig/CacheBuster/_build/latest?definitionId=1)
 
 # CacheBuster
 
@@ -11,7 +11,7 @@ It's inspired by this [article](https://www.madskristensen.net/blog/cache-bustin
 
 
 ## How to use
-1. Install the Nuget package
+1. Install the [Nuget package](https://www.nuget.org/packages/CacheBuster)
 2. Wrap your static assset paths in the CacheBuster method :arrow_right:
 
 **Example**
