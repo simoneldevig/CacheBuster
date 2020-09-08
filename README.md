@@ -50,7 +50,7 @@ It's inspired by this [article](https://www.madskristensen.net/blog/cache-bustin
 </html>
 ```
 
-## Contributing To This Project
+## Contributing to this project
 
 Anyone and everyone is welcome to contribute. Just create a PR with your changes and I will have a look at it.
 
