@@ -2,7 +2,7 @@
 
 # CacheBuster
 
-A small helper for cache busting static assets in .NET
+A small helper for automatically cache busting static assets in .NET
 
 ## How it works
 The helper looks at the file's last modified date and sets the timestamp as a queryparamter on the path to the static file. This means that everytime you change the file, the browser cache will update as well.
