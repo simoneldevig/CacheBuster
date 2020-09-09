@@ -11,7 +11,7 @@
         <iconUrl>https://www.website.com/logo.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>$description$</description>
-        <releaseNotes>Add error handling</releaseNotes>
+        <releaseNotes>Handle static files that does not exist on server</releaseNotes>
         <copyright>Copyright 2020</copyright>
         <tags>cache assets cachebust</tags>
     </metadata>

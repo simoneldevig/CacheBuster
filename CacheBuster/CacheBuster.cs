@@ -10,23 +10,32 @@ namespace CacheBuster
     {
         public static string GetFullPath(string rootRelativePath)
         {
+            string returnValue;
             if (HttpRuntime.Cache[rootRelativePath] == null)
             {
-                try
-                {
-                    string absolute = rootRelativePath.StartsWith("~")
-                        ? HostingEnvironment.MapPath(rootRelativePath)
-                        : HostingEnvironment.MapPath($"~{rootRelativePath}");
+                string absolute = rootRelativePath.StartsWith("~")
+                    ? HostingEnvironment.MapPath(rootRelativePath)
+                    : HostingEnvironment.MapPath($"~{rootRelativePath}");
 
+                if (File.Exists(absolute))
+                {
                     DateTime date = File.GetLastWriteTime(absolute ?? "");
 
                     string result = $"{rootRelativePath}?v={date.Ticks}";
                     HttpRuntime.Cache.Insert(rootRelativePath, result, new CacheDependency(absolute));
+                    returnValue = HttpRuntime.Cache[rootRelativePath] as string;
                 }
-                catch {}
+                else
+                {
+                    returnValue = rootRelativePath;
+                }
+            }
+            else
+            {
+                returnValue = HttpRuntime.Cache[rootRelativePath] as string;
             }
 
-            return HttpRuntime.Cache[rootRelativePath] as string;
+            return returnValue;
         }
     }
 }
