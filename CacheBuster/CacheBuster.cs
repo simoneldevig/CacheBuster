@@ -18,19 +18,15 @@ namespace CacheBuster
                         ? HostingEnvironment.MapPath(rootRelativePath)
                         : HostingEnvironment.MapPath($"~{rootRelativePath}");
 
-                    DateTime date = File.GetLastWriteTime(absolute);
+                    DateTime date = File.GetLastWriteTime(absolute ?? "");
 
                     string result = $"{rootRelativePath}?v={date.Ticks}";
                     HttpRuntime.Cache.Insert(rootRelativePath, result, new CacheDependency(absolute));
-
-                    return HttpRuntime.Cache[rootRelativePath] as string;
                 }
-                catch
-                {
-                    // ignored
-                }
+                catch {}
             }
-            return rootRelativePath;
+
+            return HttpRuntime.Cache[rootRelativePath] as string;
         }
     }
 }
