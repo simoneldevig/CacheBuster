@@ -11,7 +11,7 @@
         <iconUrl>https://www.website.com/logo.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>$description$</description>
-        <releaseNotes>Initial 1.0.0 release</releaseNotes>
+        <releaseNotes>Add error handling</releaseNotes>s
         <copyright>Copyright 2020</copyright>
         <tags>cache assets cachebust</tags>
     </metadata>
